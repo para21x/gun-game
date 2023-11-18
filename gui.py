@@ -1,13 +1,18 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget
-if __name__ == '__main__':
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout
 
-    app = QApplication(sys.argv)
 
-    w = QWidget()
-    w.resize(250, 150)
-    w.move(300, 300)
-    w.setWindowTitle('Simple')
-    w.show()
+def ggui():
+    app = QApplication([])
+    window = QWidget()
+    layout = QVBoxLayout()
+    
+    layout.addWidget(QPushButton('Top'))
+    layout.addWidget(QPushButton('Bottom'))
+    window.resize(500,500)
+    window.setLayout(layout)
+    window.show()
+    app.exec_() 
 
-    sys.exit(app.exec_())
+if __name__ == "__main__":
+        ggui()
